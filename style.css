@@ -10,6 +10,7 @@ body {
   }
 
   .productCard {
+   
     color: aliceblue;
     background: rgba(237, 224, 209, 0.05);
     border-radius: 10px;
@@ -17,7 +18,8 @@ body {
     backdrop-filter: blur(2.7px);
     -webkit-backdrop-filter: blur(2.7px);
     border: 1px solid rgba(237, 224, 209, 0.14);
-    transition: all 0.06s;
+    transition: all 0.1s;
+    transform: scale(0.95);
     margin: 1px;
     width: 310px;
   }

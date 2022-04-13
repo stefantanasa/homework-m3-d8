@@ -26,12 +26,11 @@
         class="container d-flex flex-row justify-content-center backoffice-area"
       >
         <div class="productCard">
-          <form class="m-3">
+          <form class="m-3" id="submit-form">
             <div class="form-group">
               <input
                 type="text"
-                name=""
-                id="name"
+                id="nameField"
                 placeholder="Name"
                 class="form-control"
               />
@@ -39,25 +38,15 @@
             <div class="form-group">
               <input
                 type="textarea"
-                name=""
                 id="product-description"
                 placeholder="Description"
                 class="form-control"
               />
             </div>
-            <div class="form-group">
-              <input
-                type="date"
-                name=""
-                id="date"
-                placeholder="Brand"
-                class="form-control"
-              />
-            </div>
+
             <div class="form-group">
               <input
                 type="text"
-                name=""
                 id="image-url"
                 placeholder="Image Url"
                 class="form-control"
@@ -66,13 +55,13 @@
             <div class="form-group">
               <input
                 type="number"
-                name=""
-                id=""
+                id="price"
                 placeholder="Price"
                 class="form-control"
               />
             </div>
-            <button type="submit">Submit</button>
+
+            <button id="submit-product" type="submit">Submit</button>
           </form>
         </div>
       </div>
@@ -91,7 +80,7 @@
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"
     ></script>
-    <script src="javascript.js"></script>
+    <script src="backend-javascript.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
