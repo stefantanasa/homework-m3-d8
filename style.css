@@ -1,0 +1,54 @@
+body {
+    background: rgb(249, 61, 102);
+    background: linear-gradient(
+      120deg,
+      rgba(249, 61, 102, 1) 0%,
+      rgba(109, 71, 217, 1) 100%
+    );
+    background-attachment: fixed;
+    color: rgb(255, 214, 181);
+  }
+
+  .productCard {
+    color: aliceblue;
+    background: rgba(237, 224, 209, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(2.7px);
+    border: 1px solid rgba(237, 224, 209, 0.14);
+    transition: all 0.06s;
+    margin: 1px;
+    width: 310px;
+  }
+  button {
+    color: aliceblue;
+    background: rgba(237, 224, 209, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(2.7px);
+    border: 1px solid rgba(237, 224, 209, 0.14);
+    min-width: 50px;
+    transition: all 0.06s;
+    margin-bottom: 5px;
+  }
+  button:hover{
+    background: rgba(228, 183, 0, 0.717);
+  }
+
+  p {
+    margin:3px;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  img {
+    height: 300px;
+    width: 300px;
+  }
+  
+
+
+  
