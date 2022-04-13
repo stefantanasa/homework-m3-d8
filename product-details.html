@@ -22,58 +22,13 @@
   <body>
     <div class="container">
       <h1 class="d-flex justify-content-center">
-        <a href="/index.html">Add new product</a>
+        <a href="/index.html">Product Details</a>
       </h1>
+
       <div
         class="container d-flex flex-row justify-content-center backoffice-area"
       >
-        <div class="productCard">
-          <form class="m-3" id="submit-form-product">
-            <div class="form-group">
-              <input
-                type="text"
-                id="nameField"
-                placeholder="Name"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="text"
-                id="brand"
-                placeholder="Brand"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="textarea"
-                id="product-description"
-                placeholder="Description"
-                class="form-control"
-              />
-            </div>
-
-            <div class="form-group">
-              <input
-                type="text"
-                id="image-url"
-                placeholder="Image Url"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="number"
-                id="price"
-                placeholder="Price"
-                class="form-control"
-              />
-            </div>
-
-            <button id="submit-product" type="submit">Add new product</button>
-          </form>
-        </div>
+        <div class="productCard edit-product-form"></div>
       </div>
     </div>
 
@@ -90,7 +45,7 @@
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"
     ></script>
-    <script src="backend-javascript.js"></script>
+    <script src="product-details.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

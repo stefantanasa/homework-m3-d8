@@ -1,12 +1,29 @@
 let cardsArea = document.querySelector(".cards-area");
+let badge = document.querySelector(".badge");
+let cartList = document.querySelector(".list-group-flush");
 
 console.log("card area: ", cardsArea);
+let items = 0;
+const handleAddCart = (event) => {
+  items++;
+  badge.textContent = `Cart ${items}`;
+  let itemClicked =
+    event.target.parentElement.parentElement.children[2].textContent.slice(26);
 
-let createCard = (arrayProducts) => {
+  let list = [];
+  list.push(itemClicked);
+  list.forEach((item) => {
+    console.log(),
+      (cartList.innerHTML += `<li class="added-in-the-cart">${item}</li>`);
+  });
+  console.log(list);
+};
+
+const createCard = (arrayProducts) => {
   arrayProducts.forEach((product) => {
     let card = document.createElement("div");
-    card.innerHTML = `  <div class="productCard my-2">
-        <div class="my-2 d-inline-block">
+    card.innerHTML = `  <div class="productCard ">
+        <div class=" d-inline-block">
           <img src=${product.imageUrl} alt="" />
           <div>
             <p>Brand: ${product.brand}</p>
@@ -20,14 +37,17 @@ let createCard = (arrayProducts) => {
           <div>
             <p>Price: $${product.price}</p>
           </div>
-          <div>
-            <button>Quick Buy</button>
-            <button>Add to cart</button>
+          <div class="d-flex justify-content-center">
+            <button id="add-cart" onClick="handleAddCart(event)">Add to cart</button>
+            <a href="/product-details.html?productId=${product._id}">
             <button><i class="fa fa-pencil" aria-hidden="true"></i></button>
+
+            </a>
             <button><i class="fa fa-trash-o" aria-hidden="true"></i></button>
           </div>
         </div>
         </div>`;
+
     cardsArea.appendChild(card);
   });
 };

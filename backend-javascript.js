@@ -3,7 +3,7 @@ let imageUrl = document.querySelector("#image-url");
 let price = document.querySelector("#price");
 let brand = document.querySelector("#brand");
 let description = document.querySelector("#product-description");
-let submitProduct = document.querySelector("#submit-form");
+let submitProduct = document.querySelector("#submit-form-product");
 let endpoint = "https://striveschool-api.herokuapp.com/api/product/";
 
 const handleSubmit = async (event) => {
@@ -34,7 +34,7 @@ const handleSubmit = async (event) => {
       alert("Product added!", data);
     }
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
   }
 };
 
