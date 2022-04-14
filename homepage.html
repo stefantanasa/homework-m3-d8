@@ -17,11 +17,14 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <title>Homepage m3 day 8!</title>
+    <title>Dashboard/index</title>
   </head>
   <body>
     <div class="container">
-      <h1 class="d-flex justify-content-center">Strivazon</h1>
+      <a href="/index.html">
+
+        <h1 class="d-flex justify-content-center">Strivazon</h1>
+      </a>
       <div class="d-flex">
         <nav class="navbar d-inline-flex navbar-account">
           <span class="navbar-brand">Account</span>
@@ -29,21 +32,16 @@
           
           
             <button class="backoffice" 
-            onclick="window.location.href = '/index.html'" >Backoffice</button>
+            onclick="window.location.href = '/backoffice.html'" >Add New Product</button>
           
         </nav>
         
         </nav>
       </div>
-      <div class="row basket ">
-        <div class="col-2  ">
-          <h3>Basket</h3>
-          <span class="badge badge-warning ">Cart</span>
-          <hr />
-          <ol class="list-group-flush"></ol>
-        </div>
+      <div class="row ">
+       
         <div
-          class="col-9 container d-flex flex-wrap justify-content-center cards-area"
+          class=" container d-flex flex-wrap justify-content-center cards-area"
         ></div>
       </div>
     </div>
@@ -61,7 +59,7 @@
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"
     ></script>
-    <script src="homepage.js"></script>
+    <script src="javascript.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
