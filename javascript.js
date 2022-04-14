@@ -23,7 +23,7 @@ const createCard = (arrayProducts) => {
   arrayProducts.forEach((product) => {
     let card = document.createElement("div");
     card.innerHTML = `  <div class="productCard ">
-    <a href="/product.html?productId=${product._id}">
+    <a href="/homework-m3-d8/product.html?productId=${product._id}">
         <div class=" d-inline-block">
 
        

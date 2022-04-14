@@ -5,7 +5,7 @@ let cartList = document.querySelector(".list-group-flush");
 console.log("card area: ", cardsArea);
 let items = 0;
 const handleQuickBuy = (itemId) => {
-  window.location.href = `/sent.html?${itemId}`;
+  window.location.href = `/homework-m3-d8/sent.html?${itemId}`;
 };
 
 const handleAddCart = (event) => {
@@ -40,7 +40,7 @@ const createCard = (arrayProducts) => {
     let card = document.createElement("div");
     card.innerHTML = `  <div class="productCard ">
         
-        <a href="/product.html?productId=${product._id}">
+        <a href="/homework-m3-d8/product.html?productId=${product._id}">
           <img class="img-homepage" src=${product.imageUrl} alt="" />
           <div>
           <p class="p-homepage">Product name: ${product.name}</p>
@@ -57,7 +57,7 @@ const createCard = (arrayProducts) => {
           </a>
           <div class="d-flex justify-content-center">
             <button id="add-cart to-basket" onclick="handleAddCart(event)">Add to cart</button>
-            <a href="/sent.html?sent=${product._id}">
+            <a href="/homework-m3-d8/sent.html?sent=${product._id}">
             <button id="add-cart" type="submit">Quick Buy</button>
           </a>
             
