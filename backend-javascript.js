@@ -4,8 +4,10 @@ let price = document.querySelector("#price");
 let brand = document.querySelector("#brand");
 let description = document.querySelector("#product-description");
 let submitProduct = document.querySelector("#submit-form-product");
-let endpoint = "https://striveschool-api.herokuapp.com/api/product/";
-
+let backofficeArea = document.querySelector(".backoffice-area");
+let endpointPost = "https://striveschool-api.herokuapp.com/api/product/";
+let alertElement = document.createElement("div");
+console.log(nameField.value);
 const handleSubmit = async (event) => {
   event.preventDefault();
   let objToSend = {
@@ -13,13 +15,16 @@ const handleSubmit = async (event) => {
     price: price.value,
     brand: brand.value,
     description: description.value,
-    imageUrl: imageUrl.value || "http://placeimg.com/640/480/sports",
+    imageUrl:
+      imageUrl.value === true
+        ? imageUrl.value
+        : "http://placeimg.com/640/480/dance",
   };
   console.log("event: ", submitProduct);
-  console.log(objToSend, endpoint);
+  console.log(objToSend, endpointPost);
 
   try {
-    let data = await fetch(endpoint, {
+    let data = await fetch(endpointPost, {
       method: "POST",
       body: JSON.stringify(objToSend),
       headers: {
@@ -31,7 +36,13 @@ const handleSubmit = async (event) => {
 
     if (data.ok) {
       data = await data.json();
-      alert("Product added!", data);
+      backofficeArea.innerHTML += `
+      
+      <div class="row alert alert-success" role="alert">
+        Product Has Been Added!
+      </div>
+        
+      `;
     }
   } catch (error) {
     alert(error.message);

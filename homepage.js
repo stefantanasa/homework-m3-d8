@@ -39,10 +39,7 @@ const createCard = (arrayProducts) => {
           </div>
           <div class="d-flex justify-content-center">
             <button id="add-cart" onClick="handleAddCart(event)">Add to cart</button>
-            <a href="/product-details.html?productId=${product._id}">
-            <button><i class="fa fa-pencil" aria-hidden="true"></i></button>
-
-            </a>
+          
             
           </div>
         </div>

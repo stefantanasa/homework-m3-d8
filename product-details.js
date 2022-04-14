@@ -6,6 +6,22 @@ let fields = document.createElement("div");
 let productId = new URLSearchParams(window.location.search).get("productId");
 let endpointId = `https://striveschool-api.herokuapp.com/api/product/${productId}`;
 
+let handleDelete = async () => {
+  let data = await fetch(endpointId, {
+    method: "DELETE",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwOWZmNTRjZmY1ZjAwMTU5MGJkYWUiLCJpYXQiOjE2NDk4MzY4ODIsImV4cCI6MTY1MTA0NjQ4Mn0.972Dka7292kHJFQonsL8pN9vyYsHdhKImv5l5MKze2g",
+      "Content-Type": "application/json",
+    },
+  });
+  data = await data.json();
+  console.log("deleted!");
+  redirect("/");
+};
+const redirect = (location) => {
+  window.location.href = location;
+};
 const handleSubmitPut = (event) => {
   event.preventDefault();
   let nameField = document.querySelector("#nameField");
@@ -14,14 +30,12 @@ const handleSubmitPut = (event) => {
   let brand = document.querySelector("#brand");
   let description = document.querySelector("#product-description");
   let objToPut = {
-    nameField: nameField.value,
+    name: nameField.value,
     imageUrl: imageUrl.value,
     price: price.value,
     brand: brand.value,
     description: description.value,
   };
-
-  console.log("Put");
 
   let fetchToPut = async () => {
     let data = await fetch(endpointId, {
@@ -33,8 +47,14 @@ const handleSubmitPut = (event) => {
         "Content-Type": "application/json",
       },
     });
-    console.log("inside fetch:", objToPut);
+
     data = await data.json();
+
+    console.log("from fetch:", data);
+    console.log("Obj to send:", objToPut);
+    console.log("inside endpoint:", endpointId);
+
+    redirect("/");
   };
   fetchToPut();
 };
@@ -106,7 +126,9 @@ let fetchDataById = async () => {
       value="${price}"
     />
   </div>
-  <button id="submit-product" type="submit">Save</button>
+  <button id="submit-product" class="float-left" type="submit">Save</button>
+  <button id="submit-product" class="float-right bg-danger" onClick="handleDelete()" ><i class="fa fa-trash"  aria-hidden="true"></i></button>
+
   </form>
 
   `;
