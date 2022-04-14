@@ -4,45 +4,65 @@ let cartList = document.querySelector(".list-group-flush");
 
 console.log("card area: ", cardsArea);
 let items = 0;
+const handleQuickBuy = (itemId) => {
+  window.location.href = `/sent.html?${itemId}`;
+};
+
 const handleAddCart = (event) => {
   items++;
   badge.textContent = `Cart ${items}`;
-  let itemClicked =
-    event.target.parentElement.parentElement.children[2].textContent.slice(26);
 
-  let list = [];
-  list.push(itemClicked);
-  list.forEach((item) => {
-    console.log(),
-      (cartList.innerHTML += `<li class="added-in-the-cart">${item}</li>`);
-  });
-  console.log(list);
+  // // event.target.parentElement.parentElement.children[1].textContent.slice(26);
+
+  // productName =
+  //   event.target.parentElement.parentElement.children[0].children[1].textContent.slice(
+  //     25
+  //   );
+  // productPrice =
+  //   event.target.parentElement.parentElement.children[0].children[4].textContent.slice(
+  //     21
+  //   );
+  // items.push({ name: productName, price: productPrice });
+  // console.log(items);
+  // console.log(productName);
+
+  // let list = [];
+  // list.push(itemClicked);
+  // list.forEach((item) => {
+  //   console.log(),
+  //     (cartList.innerHTML += `<li class="added-in-the-cart">${item}</li>`);
+  // });
+  // console.log(list);
 };
 
 const createCard = (arrayProducts) => {
   arrayProducts.forEach((product) => {
     let card = document.createElement("div");
     card.innerHTML = `  <div class="productCard ">
-        <div class=" d-inline-block">
-          <img src=${product.imageUrl} alt="" />
+        
+        <a href="/product.html?productId=${product._id}">
+          <img class="img-homepage" src=${product.imageUrl} alt="" />
           <div>
-            <p>Brand: ${product.brand}</p>
+          <p class="p-homepage">Product name: ${product.name}</p>
           </div>
           <div>
-            <p>Product name: ${product.name}</p>
+          <p class="p-homepage">Brand: ${product.brand}</p>
           </div>
           <div>
-            <p >Description: ${product.description}</p>
+            <p  class="p-homepage">Description: ${product.description}</p>
           </div>
           <div>
             <p>Price: $${product.price}</p>
           </div>
+          </a>
           <div class="d-flex justify-content-center">
-            <button id="add-cart" onClick="handleAddCart(event)">Add to cart</button>
-          
+            <button id="add-cart to-basket" onclick="handleAddCart(event)">Add to cart</button>
+            <a href="/sent.html?sent=${product._id}">
+            <button id="add-cart" type="submit">Quick Buy</button>
+          </a>
             
           </div>
-        </div>
+        
         </div>`;
 
     cardsArea.appendChild(card);

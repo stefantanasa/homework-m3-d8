@@ -1,6 +1,6 @@
 // product details page
 
-const editProductForm = document.querySelector(".edit-product-form");
+const productDetailsCart = document.querySelector(".product-details-card");
 let fields = document.createElement("div");
 
 let productId = new URLSearchParams(window.location.search).get("productId");
@@ -70,70 +70,50 @@ let fetchDataById = async () => {
   data = await data.json();
   console.log(data);
 
-  const { name, description, brand, imageUrl, price } = data;
+  const {
+    name,
+    description,
+    brand,
+    imageUrl,
+    price,
+    _id,
+    updatedAt,
+    userId,
+    createdAt,
+  } = data;
   fields.innerHTML = `
-  <img
-            class="m-2"
-            src="${imageUrl}"
-            alt="product"
-          />
-  <form class="m-3 edit-product-form" id="submit-form" onSubmit = handleSubmitPut(event)>
-          
-  <div class="form-group">
-    <input
-      type="text"
-      id="nameField"
-      placeholder="Name"
-      class="form-control"
-      value="${name}"
-    />
-  </div>
-  <div class="form-group">
-    <input
-      type="text"
-      id="brand"
-      placeholder="Brand"
-      class="form-control"
-      value="${brand}"
-    />
-  </div>
-  <div class="form-group">
-    <input
-      type="textarea"
-      id="product-description"
-      placeholder="Description"
-     
-      class="form-control"
-      value="${description}"
-    />
-  </div>
   
-  <div class="form-group">
-    <input
-      type="text"
-      id="image-url"
-      placeholder="Image Url"
-      class="form-control"
-      value="${imageUrl}"
-    />
-  </div>
-  <div class="form-group">
-    <input
-      type="number"
-      id="price"
-      placeholder="Price"
-      class="form-control"
-      value="${price}"
-    />
-  </div>
-  <button id="submit-product" class="float-left" type="submit">Save</button>
-  <button id="submit-product" class="float-right bg-danger" onClick="handleDelete()" ><i class="fa fa-trash"  aria-hidden="true"></i></button>
-
-  </form>
+          <img src=${imageUrl} alt="" />
+          <div>
+            <p>Product name: ${name}</p>
+          </div>
+          <div>
+            <p>Brand: ${brand}</p>
+          </div>
+          <div>
+            <p >Description: ${description}</p>
+          </div>
+          <div>
+            <p>Price: $${price}</p>
+          </div>
+          <div>
+            <p>Product Id: $${_id}</p>
+          </div>
+          <div>
+            <p>Published: $${createdAt}</p>
+          </div>
+          </a>
+          <div class="d-flex justify-content-center">
+            <button id="add-cart" onClick="handleAddCart(event)">Add to cart</button>
+            
+           
+            
+            </div>
+  
 
   `;
 
-  editProductForm.prepend(fields);
+  productDetailsCart.prepend(fields);
 };
 
 window.onload = () => {

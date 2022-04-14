@@ -23,29 +23,32 @@ const createCard = (arrayProducts) => {
   arrayProducts.forEach((product) => {
     let card = document.createElement("div");
     card.innerHTML = `  <div class="productCard ">
+    <a href="/product.html?productId=${product._id}">
         <div class=" d-inline-block">
-          <img src=${product.imageUrl} alt="" />
-          <div>
-            <p>Brand: ${product.brand}</p>
-          </div>
-          <div>
-            <p>Product name: ${product.name}</p>
-          </div>
-          <div>
-            <p >Description: ${product.description}</p>
-          </div>
-          <div>
-            <p>Price: $${product.price}</p>
-          </div>
-          <div class="d-flex justify-content-center">
-            <button id="add-cart" onClick="handleAddCart(event)">Add to cart</button>
-            <a href="/product-details.html?productId=${product._id}">
-            <button><i class="fa fa-pencil" aria-hidden="true"></i></button>
 
-            </a>
-            
+       
+        <img class="img-homepage" src=${product.imageUrl} alt="" />
+        
+          <div>
+            <p class="p-homepage">Brand: ${product.brand}</p>
           </div>
-        </div>
+          <div>
+            <p class="p-homepage">Product name: ${product.name}</p>
+          </div>
+          <div>
+            <p class="p-homepage">Description: ${product.description}</p>
+          </div>
+          <div>
+            <p class="p-homepage">Price: $${product.price}</p>
+          </div>
+          </a>
+          <div class="d-flex justify-content-center">
+          
+          <button><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button id="add-cart" onClick="handleAddCart(event)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
+            </div>
+            </div>
         </div>`;
 
     cardsArea.appendChild(card);
