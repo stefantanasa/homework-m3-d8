@@ -3,39 +3,25 @@ let badge = document.querySelector(".badge");
 let cartList = document.querySelector(".list-group-flush");
 
 console.log("card area: ", cardsArea);
-let items = 0;
 const handleQuickBuy = (itemId) => {
     window.location.href = `/homework-m3-d8/sent.html?${itemId}`;
 };
 
-const handleAddCart = (productName) => {
+let items = 0;
+let total = 0;
+let products = [];
+const handleAddCart = (productName, productId, price) => {
     items++;
+    total += parseFloat(price);
+    products.push({ productName: productName, _id: productId, price: price });
+    cartList.innerHTML = "";
+    products.forEach((p) => {
+        cartList.innerHTML += `<li class="added-in-the-cart">$${p.price}:   ${p.productName}</li>`;
+    });
+    cartList.innerHTML += `<hr>Total: $${total}`;
 
-    console.log(productName);
+    badge.textContent = `Cart ${items}`;
 };
-// badge.textContent = `Cart ${items}`;
-
-// // event.target.parentElement.parentElement.children[1].textContent.slice(26);
-
-// productName =
-//   event.target.parentElement.parentElement.children[0].children[1].textContent.slice(
-//     25
-//   );
-// productPrice =
-//   event.target.parentElement.parentElement.children[0].children[4].textContent.slice(
-//     21
-//   );
-// items.push({ name: productName, price: productPrice });
-// console.log(items);
-// console.log(productName);
-
-// let list = [];
-// list.push(itemClicked);
-// list.forEach((item) => {
-//   console.log(),
-//     (cartList.innerHTML += `<li class="added-in-the-cart">${item}</li>`);
-// });
-// console.log(list);
 
 const createCard = (arrayProducts) => {
     arrayProducts.forEach((product) => {
@@ -58,7 +44,7 @@ const createCard = (arrayProducts) => {
           </div>
           </a>
           <div class="d-flex justify-content-center">
-            <button id="add-cart to-basket" onclick="handleAddCart('${product.name}')">Add to cart</button>
+            <button id="add-cart to-basket" onclick="handleAddCart('${product.name}','${product._id}','${product.price}')">Add to cart</button>
             <a href='/homework-m3-d8/sent.html?sent=${product._id}'>
             <button id="add-cart" type="submit">Quick Buy</button>
           </a>
