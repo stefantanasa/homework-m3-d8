@@ -1,40 +1,34 @@
 body {
     background: rgb(249, 61, 102);
-    background: linear-gradient(
-      120deg,
-      rgba(249, 61, 102, 1) 0%,
-      rgba(109, 71, 217, 1) 100%
-    );
+    background: linear-gradient( 120deg, rgba(249, 61, 102, 1) 0%, rgba(109, 71, 217, 1) 100%);
     background-attachment: fixed;
     color: rgb(255, 214, 181);
-  }
+}
 
 .navbar-account {
-   
-  color: aliceblue;
-  background: rgba(237, 224, 209, 0.05);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2.7px);
-  -webkit-backdrop-filter: blur(2.7px);
-  border: 1px solid rgba(237, 224, 209, 0.14);
-  transition: all 0.2s;
-  transform: scale(1);
-  width: 100%
-
+    color: aliceblue;
+    background: rgba(237, 224, 209, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(2.7px);
+    border: 1px solid rgba(237, 224, 209, 0.14);
+    transition: all 0.2s;
+    transform: scale(1);
+    width: 100%
 }
 
 .backoffice {
-  display:inline;
-  align-items: end;
-  justify-content: flex-end;
+    display: inline;
+    align-items: end;
+    justify-content: flex-end;
 }
+
 .basket {
-  background: rgba(237, 224, 209, 0.05);
-   
+    background: rgba(237, 224, 209, 0.05);
 }
-  .productCard {
-   
+
+.productCard {
     color: aliceblue;
     background: rgba(237, 224, 209, 0.05);
     border-radius: 10px;
@@ -46,8 +40,9 @@ body {
     transform: scale(0.95);
     margin: 1px;
     width: 270px;
-  }
-  button {
+}
+
+button {
     color: aliceblue;
     background: rgba(237, 224, 209, 0.05);
     border-radius: 16px;
@@ -58,44 +53,47 @@ body {
     min-width: 50px;
     transition: all 0.06s;
     margin: 5px;
-  }
-  button:hover{
-    background: rgba(228, 183, 0, 0.717);
-  }
+}
 
-  .p-homepage {
-    margin:3px;
+button:hover {
+    background: rgba(228, 183, 0, 0.717);
+}
+
+.p-homepage {
+    margin: 3px;
     max-width: 250px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  .img-homepage {
+}
+
+.img-homepage {
     margin-left: 8px;
     margin-top: 5px;
     height: 250px;
     width: 250px;
-  }
+    object-fit: cover;
+}
 
-  a:hover {
+a:hover {
     text-decoration: none;
-    color:rgb(255, 214, 181)
-  }
-  a {
+    color: rgb(255, 214, 181)
+}
+
+a {
     text-decoration: none;
-    color:rgb(255, 214, 181)
-  }
+    color: rgb(255, 214, 181)
+}
 
-.product-details-card{
-  color: aliceblue;
-  background: rgba(237, 224, 209, 0.05);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2.7px);
-  -webkit-backdrop-filter: blur(2.7px);
-  border: 1px solid rgba(237, 224, 209, 0.14);
-  transition: all 0.1s;
-  transform: scale(0.95);
-  margin: 1px;
-
+.product-details-card {
+    color: aliceblue;
+    background: rgba(237, 224, 209, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(2.7px);
+    border: 1px solid rgba(237, 224, 209, 0.14);
+    transition: all 0.1s;
+    transform: scale(0.95);
+    margin: 1px;
 }
